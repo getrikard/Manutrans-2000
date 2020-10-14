@@ -23,7 +23,11 @@
   <div class="matrix">
     <div class="line" v-for="(line, i) of outputText" :key="i">
       <div class="word" v-show="line != ''" v-for="(word, i) of line" :key="i">
-        <div v-show="word != ''">{{ word }}</div>
+        <div v-show="word != ''">
+          <a :href="'https://en.wiktionary.org/w/index.php?search=' + word" target="_BLANK">
+            {{ word }}
+          </a>
+        </div>
         <div>
           <input type="text" class="input-word" @input="translate()" />
         </div>
@@ -59,8 +63,8 @@ export default {
         let validWords = [];
 
         for (const word of words) {
-          if (word == '') continue;
-          validWords.push(word)
+          if (word == "") continue;
+          validWords.push(word);
         }
 
         matrix.push(validWords);
@@ -131,6 +135,16 @@ p {
 
   max-width: 80ch;
   // margin: 1em auto;
+}
+
+a {
+  color: $color2;
+    text-decoration: none;
+    border-bottom: 1px solid;
+
+  &:hover {
+    border-bottom: 0;
+  }
 }
 
 %common-input {
