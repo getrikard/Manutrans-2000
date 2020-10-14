@@ -9,7 +9,7 @@
         <h2>Input</h2>
         <textarea id="text-input" @input="matrix()"></textarea>
       </div>
-      
+
       <div>
         <h2 style="text-align: right">Output</h2>
         <textarea
@@ -112,6 +112,21 @@ $font-family-normal: "PT Sans", Georgia, "Times New Roman", Times, serif;
   background-clip: text;
 }
 
+%common-input {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: rgba($color1, 0.85);
+  color: white;
+  border: 1px solid $color4;
+  border-radius: 3px;
+  padding: 0.5em;
+  font-family: $font-family-normal;
+
+  &:focus {
+    box-shadow: 0 0 20px rgba($color2, 0.5);
+  }
+}
+
 body {
   background-color: $color1;
   // background: linear-gradient(#ff7de9, #fa16ab);
@@ -146,21 +161,6 @@ a {
 
   &:hover {
     border-bottom: 0;
-  }
-}
-
-%common-input {
-  box-sizing: border-box;
-  width: 100%;
-  background-color: rgba($color1, 0.85);
-  color: white;
-  border: 1px solid $color4;
-  border-radius: 3px;
-  padding: 0.5em;
-  font-family: $font-family-normal;
-
-  &:focus {
-    box-shadow: 0 0 20px rgba($color2, 0.5);
   }
 }
 
