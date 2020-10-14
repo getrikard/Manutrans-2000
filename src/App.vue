@@ -19,26 +19,34 @@
         ></textarea>
       </div>
     </div>
-  </div>
 
-  <div class="matrix">
-    <div class="line" v-for="(line, i) of outputText" :key="i">
-      <div class="word" v-show="line != ''" v-for="(word, i) of line" :key="i">
-        <div v-show="word != ''">
-          <a :href="'https://en.wiktionary.org/w/index.php?search=' + word" target="_BLANK">
-            {{ word }}
-          </a>
+    <div class="matrix">
+      <div class="line" v-for="(line, i) of outputText" :key="i">
+        <div
+          class="word"
+          v-show="line != ''"
+          v-for="(word, i) of line"
+          :key="i"
+        >
+          <div v-show="word != ''">
+            <a
+              :href="'https://en.wiktionary.org/w/index.php?search=' + word"
+              target="_BLANK"
+            >
+              {{ word }}
+            </a>
+          </div>
+
+          <div>
+            <input type="text" class="input-word" @input="translate()" />
+          </div>
         </div>
 
-        <div>
-          <input type="text" class="input-word" @input="translate()" />
-        </div>
-      </div>
-
-      <div class="line blank" v-show="line == ''">
-        <div class="word">
-          <div>Ingenting</div>
-          <div><input type="text" /></div>
+        <div class="line blank" v-show="line == ''">
+          <div class="word">
+            <div>Ingenting</div>
+            <div><input type="text" /></div>
+          </div>
         </div>
       </div>
     </div>
@@ -156,8 +164,8 @@ p {
 
 a {
   color: $color2;
-    text-decoration: none;
-    border-bottom: 1px solid;
+  text-decoration: none;
+  border-bottom: 1px solid;
 
   &:hover {
     border-bottom: 0;
