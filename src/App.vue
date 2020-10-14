@@ -9,6 +9,7 @@
         <h2>Input</h2>
         <textarea id="text-input" @input="matrix()"></textarea>
       </div>
+      
       <div>
         <h2 style="text-align: right">Output</h2>
         <textarea
@@ -28,6 +29,7 @@
             {{ word }}
           </a>
         </div>
+
         <div>
           <input type="text" class="input-word" @input="translate()" />
         </div>
