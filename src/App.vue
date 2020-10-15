@@ -102,8 +102,8 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
 
 // Colors:
 $color1: #2f0024;
@@ -111,7 +111,7 @@ $color2: #70ffdf;
 $color3: #ff7de9;
 $color4: #fa16ab;
 
-$font-family-header: "Lobster", cursive;
+$font-family-header: "Lobster", sans-serif;
 $font-family-normal: "PT Sans", Georgia, "Times New Roman", Times, serif;
 
 %miami {
@@ -137,8 +137,6 @@ $font-family-normal: "PT Sans", Georgia, "Times New Roman", Times, serif;
 
 body {
   background-color: $color1;
-  // background: linear-gradient(#ff7de9, #fa16ab);
-  background-image: url("https://cdn.discordapp.com/attachments/699521107102793738/765566849839792138/hotline_miami.gif");
   background-size: contain;
   background-attachment: fixed;
   font-family: $font-family-normal;
