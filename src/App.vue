@@ -2,23 +2,23 @@
   <div class="content">
     <h1>ManuTrans2000</h1>
 
-    <p>Putt inn din favorittutenlandske sangtekst og oversett i vei!</p>
+    <!-- <p style="font-size: 1.125em">Putt inn din favorittutenlandske sangtekst og oversett i vei!</p> -->
 
-    <div class="columns">
+    <!-- <div class="columns"> -->
       <div>
-        <h2>Input</h2>
-        <textarea id="text-input" @input="matrix()"></textarea>
+        <!-- <h2>Input</h2> -->
+        <textarea id="text-input" @input="matrix()" placeholder="Putt inn din favorittutenlandske sangtekst og oversett i vei!"></textarea>
       </div>
 
-      <div>
+      <!-- <div>
         <h2 style="text-align: right">Output</h2>
         <textarea
           id="text-input"
           @input="matrix()"
           :value="translatedText"
         ></textarea>
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
 
     <div class="matrix">
       <div class="line" v-for="(line, i) of outputText" :key="i">
@@ -29,6 +29,7 @@
           :key="i"
         >
           <div v-show="word != ''">
+            <input type="checkbox" name="" id="" />
             <a
               :href="'https://en.wiktionary.org/w/index.php?search=' + word"
               target="_BLANK"
@@ -37,15 +38,15 @@
             </a>
           </div>
 
-          <div>
+          <!-- <div>
             <input type="text" class="input-word" @input="translate()" />
-          </div>
+          </div> -->
         </div>
 
         <div class="line blank" v-show="line == ''">
           <div class="word">
             <div>Ingenting</div>
-            <div><input type="text" /></div>
+            <!-- <div><input type="text" /></div> -->
           </div>
         </div>
       </div>
@@ -129,6 +130,7 @@ $font-family-normal: "PT Sans", Georgia, "Times New Roman", Times, serif;
   border-radius: 3px;
   padding: 0.5em;
   font-family: $font-family-normal;
+  font-size: 1em;
 
   &:focus {
     box-shadow: 0 0 20px rgba($color2, 0.5);
@@ -140,6 +142,7 @@ body {
   background-size: contain;
   background-attachment: fixed;
   font-family: $font-family-normal;
+  // font-size: 1.125em;
   line-height: 1.5;
   color: $color4;
 }
@@ -181,6 +184,10 @@ input[type="text"] {
   @extend %common-input;
 }
 
+input[type="checkbox"] {
+  margin-right: 0.75em;
+}
+
 .content {
   max-width: 1024px;
   margin: auto;
@@ -199,6 +206,15 @@ input[type="text"] {
   }
 }
 
+.matrix {
+  box-sizing: border-box;
+  max-width: 1450px;
+  margin: 3em auto;
+  border: 1px solid $color4;
+  border-radius: 3px;
+  background-color: rgba($color1, 0.85);
+}
+
 .line {
   display: flex;
   margin: 1em 0;
@@ -210,20 +226,13 @@ input[type="text"] {
   visibility: hidden;
 }
 
-.matrix {
-  max-width: 1450px;
-  margin: auto;
-}
-
 .word {
-  background-color: rgba($color1, 0.85);
   text-align: center;
   margin-right: 0.5em;
-  border: 1px solid $color4;
   padding: 0.5em;
   min-width: 10px;
   border-radius: 3px;
-  font-size: 1.1em;
+  // font-size: 1.1em;
   letter-spacing: 0.125ch;
   color: $color2;
 
