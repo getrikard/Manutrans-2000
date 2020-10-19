@@ -139,7 +139,8 @@ $font-family-normal: "PT Sans", Georgia, "Times New Roman", Times, serif;
 
 body {
   background-color: $color1;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   font-family: $font-family-normal;
   // font-size: 1.125em;
